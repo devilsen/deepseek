@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "deepseek",
+  "productName": "DeepSeek",
   "version": "0.1.0",
   "identifier": "com.deepseek.app",
   "build": {
@@ -12,9 +12,12 @@
   "app": {
     "windows": [
       {
-        "title": "deepseek",
-        "width": 800,
-        "height": 600
+        "title": "DeepSeek",
+        "width": 1080,
+        "height": 720,
+        "resizable": true,
+        "fullscreen": false,
+        "url": "https://chat.deepseek.com"
       }
     ],
     "security": {
