@@ -7,13 +7,17 @@ use tauri::{
 pub fn create_tray<R: Runtime>(app: &tauri::AppHandle<R>) -> tauri::Result<()> {
     let open_i = MenuItem::with_id(app, "open", "打开 DeepSeek 窗口", true, None::<&str>)?;
     let setting_i = MenuItem::with_id(app, "setting", "设置", true, None::<&str>)?;
-    let check_update_i: MenuItem<R> = MenuItem::with_id(app, "check_update", "检查更新", true, None::<&str>)?;
+    let check_update_i: MenuItem<R> =
+        MenuItem::with_id(app, "check_update", "检查更新", true, None::<&str>)?;
 
     let log_out_i: MenuItem<R> = MenuItem::with_id(app, "logout", "注销", true, None::<&str>)?;
     let quit_i: MenuItem<R> = MenuItem::with_id(app, "quit", "退出", true, None::<&str>)?;
-    
+
     // 分割线
-    let menu = Menu::with_items(app, &[&open_i, &setting_i, &check_update_i, &log_out_i, &quit_i])?;
+    let menu = Menu::with_items(
+        app,
+        &[&open_i, &setting_i, &check_update_i, &log_out_i, &quit_i],
+    )?;
 
     let _ = TrayIconBuilder::with_id("tray")
         .icon(app.default_window_icon().unwrap().clone())
